@@ -1,0 +1,146 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9DD9EA"
+    tools:context=".MainActivity" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:src="@drawable/bg2" />
+
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/seekBar1" >
+
+        <HorizontalScrollView
+            android:id="@+id/RadioGroupScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="500dp"
+                android:layout_height="60dp"
+                android:orientation="horizontal" >
+
+                <RadioGroup
+                    android:id="@+id/MainManuRadioGroup"
+                    android:layout_width="800dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/radioButton0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" 
+                        android:layout_weight="1"/>
+
+                    <RadioButton
+                        android:id="@+id/radioButton1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" 
+                        android:layout_weight="1"/>
+
+                    <RadioButton
+                        android:id="@+id/radioButton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </RadioGroup>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <LinearLayout
+            android:id="@+id/fragment_LinearLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="250dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/RadioGroupScrollView"
+            android:orientation="vertical" >
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/map_choces_ViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+            </android.support.v4.view.ViewPager>
+
+            <GridView
+                android:id="@+id/gridView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:numColumns="3" >
+            </GridView>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/buttonB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonA"
+        android:layout_alignBottom="@+id/buttonA"
+        android:layout_alignParentRight="true"
+        android:text="選擇B" />
+
+    <Button
+        android:id="@+id/CancelB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/CancelA"
+        android:layout_alignBottom="@+id/CancelA"
+        android:layout_alignLeft="@+id/buttonB"
+        android:text="取消B" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/CancelA"
+        android:layout_alignTop="@+id/buttonA"
+        android:layout_toLeftOf="@+id/buttonB"
+        android:layout_toRightOf="@+id/CancelA"
+        android:text="觸發!" />
+
+    <Button
+        android:id="@+id/CancelA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/buttonA"
+        android:layout_below="@+id/buttonB"
+        android:text="取消A" />
+
+    <Button
+        android:id="@+id/buttonA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="46dp"
+        android:text="選擇A" />
+
+</RelativeLayout><!--
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="400dp" 
+    android:orientation="horizontal"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/seekBar1" >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="250dp">
+    </LinearLayout>
+</ScrollView>
+-->

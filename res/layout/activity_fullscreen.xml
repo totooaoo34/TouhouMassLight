@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FullscreenActivity" >
+
+    <totoo.touhou.gameview.GameWorld
+        android:id="@+id/gameView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <totoo.touhou.gameview.ShowHeathView
+        android:id="@+id/showHeathView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/RL_vertical_height"
+        android:paddingLeft="@dimen/RL_horizontal_width"
+        android:paddingRight="@dimen/RL_horizontal_width"
+        android:paddingTop="@dimen/RL_vertical_height" >
+
+        <totoo.touhou.gameview.FunctionButtonView
+            android:id="@+id/weekShoot_functionButtonView"
+            android:layout_width="@dimen/fn_horizontal_width"
+            android:layout_height="@dimen/fn_vertical_height"
+            android:layout_alignLeft="@+id/shoot_functionButtonView"
+            android:layout_centerVertical="true"
+            functionID="__shoot" />
+
+        <totoo.touhou.gameview.FunctionButtonView
+            android:id="@+id/shoot_functionButtonView"
+            android:layout_width="@dimen/fn_horizontal_width"
+            android:layout_height="@dimen/fn_vertical_height"
+            android:layout_alignTop="@+id/spellStrong_functionButtonView"
+            functionID="shoot" />
+
+        <totoo.touhou.gameview.FunctionButtonView
+            android:id="@+id/spellWeek_functionButtonView"
+            android:layout_width="@dimen/fn_horizontal_width"
+            android:layout_height="@dimen/fn_vertical_height"
+            android:layout_alignBottom="@+id/weekShoot_functionButtonView"
+            android:layout_alignParentRight="true"
+            functionID="__spell" />
+
+        <totoo.touhou.gameview.FunctionButtonView
+            android:id="@+id/spellStrong_functionButtonView"
+            android:layout_width="@dimen/fn_horizontal_width"
+            android:layout_height="@dimen/fn_vertical_height"
+            android:layout_alignLeft="@+id/spellWeek_functionButtonView"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="40dp"
+            functionID="spell" />
+    </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+            
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="@dimen/RL_vertical_height"
+        android:paddingLeft="@dimen/RL_horizontal_width"
+        android:paddingRight="@dimen/RL_horizontal_width"
+        android:paddingTop="@dimen/RL_vertical_height" >
+
+        <TextView
+            android:id="@+id/textViewTip"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"
+            android:text="这个是摇杆" />
+
+        <totoo.touhou.gameview.ContorlView
+            android:id="@+id/contorlView1"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true" />
+
+        <totoo.touhou.gameview.FunctionButtonView
+            android:id="@+id/fly_functionButtonView"
+            android:layout_width="@dimen/fn_horizontal_width"
+            android:layout_height="@dimen/fn_vertical_height"
+            android:layout_alignBottom="@+id/contorlView1"
+            functionID="fly" />
+
+        <totoo.touhou.gameview.FunctionButtonView
+            android:id="@+id/attack_functionButtonView"
+            android:layout_width="@dimen/fn_horizontal_width"
+            android:layout_height="@dimen/fn_vertical_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            functionID="attack" />
+    </RelativeLayout>
+            
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout><!--
+     functionID"attack", "fly", "spell", "shoot", "——spell","——shoot"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.2">
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+
+
+    </RelativeLayout>
+    <Button
+        android:id="@+id/bRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bUP"
+        android:layout_toRightOf="@+id/bDown"
+        android:text="R→右" />
+
+    <Button
+        android:id="@+id/bLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/bDown"
+        android:layout_marginBottom="33dp"
+        android:layout_toLeftOf="@+id/bDown"
+        android:text="左←L " />
+
+    <Button
+        android:id="@+id/bDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/contorlView1"
+        android:layout_alignLeft="@+id/bUP"
+        android:layout_alignParentBottom="true"
+        android:text="D↓下" />
+
+    <Button
+        android:id="@+id/bUP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bLeft"
+        android:layout_centerHorizontal="true"
+        android:text="U↑上" />
+        <Button
+            android:id="@+id/bSC"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/bSC2"
+            android:layout_marginTop="32dp"
+            android:text="符卡SC1" />
+
+        <Button
+            android:id="@+id/bSC2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/bS"
+            android:layout_alignBottom="@+id/bS"
+            android:layout_alignParentRight="true"
+            android:text="符卡SC2" />
+
+        <Button
+            android:id="@+id/bW"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/bSC"
+            android:layout_alignBottom="@+id/bSC"
+            android:layout_alignParentLeft="true"
+            android:text="弱射擊WS" />
+
+        <Button
+            android:id="@+id/bA"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/bF"
+            android:layout_alignBottom="@+id/bF"
+            android:layout_alignParentRight="true"
+            android:text="近身攻擊A" />
+
+        <Button
+            android:id="@+id/bF"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="153dp"
+            android:text="飛行F" />
+
+        <Button
+            android:id="@+id/bS"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="58dp"
+            android:text="強射擊SS" />-->
